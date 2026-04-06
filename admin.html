@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Digital Notice Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Upload New Notice</h1>
+
+        <div class="form-group">
+            <label for="noticeTitle">Notice Title</label>
+            <input type="text" id="noticeTitle" placeholder="Enter notice title" required>
+        </div>
+
+        <div class="form-group">
+            <label for="noticeFile">Select File</label>
+            <input type="file" id="noticeFile" required>
+        </div>
+
+        <button id="uploadBtn">Upload Notice</button>
+
+        <div id="message"></div>
+
+        <a href="index.html" class="link-btn secondary-btn">Back to Board</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js" defer></script>
+</body>
+
+</html>
