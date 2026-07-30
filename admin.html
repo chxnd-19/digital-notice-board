@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal | MRIT ISE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div id="admin-login-overlay" class="login-overlay">
+        <div class="login-card">
+            <div class="lock-icon"><i class="fas fa-user-shield"></i></div>
+            <h2>Admin Access</h2>
+            <p>Please enter your access PIN</p>
+            <input type="password" id="adminPinInput" placeholder="••••" maxlength="4">
+            <button onclick="checkAdminPin()">Unlock Portal</button>
+            <a href="index.html" class="exit-link">Return to Board</a>
+        </div>
+    </div>
+
+    <nav class="floating-nav">
+        <a href="index.html"><i class="fas fa-arrow-left"></i> Back to Board</a>
+    </nav>
+
+    <div class="container">
+        <div id="admin-content" style="display:none;" class="admin-box">
+            <h2 id="form-title" style="font-size: 2rem; font-weight: 800; margin-bottom: 10px;">Post Announcement</h2>
+            <p style="color: #71717a; margin-bottom: 30px;">Updates are visible to all students immediately.</p>
+
+            <input type="hidden" id="edit-id">
+
+            <label style="font-size: 0.8rem; font-weight: 700; color: #a1a1aa; text-transform: uppercase;">Notice
+                Title</label>
+            <input type="text" id="noticeTitle" class="input-field" placeholder="e.g. IA-1 Timetable Released">
+
+            <label style="font-size: 0.8rem; font-weight: 700; color: #a1a1aa; text-transform: uppercase;">File
+                Attachment</label>
+            <input type="file" id="noticeFile" class="input-field">
+
+            <button id="uploadBtn" class="publish-btn">Publish to Board</button>
+            <button id="cancelBtn" style="display:none; margin-top:10px; background:#4b5563;" class="publish-btn">Cancel
+                Edit</button>
+
+            <div style="margin-top: 40px; border-top: 1px solid var(--glass-border); padding-top: 20px;">
+                <h3 style="margin-bottom: 20px;">Manage Active Notices</h3>
+                <div id="admin-notices-list" class="bento-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="image-modal" class="modal-overlay">
+        <div class="modal-container">
+            <button class="modal-close" onclick="closeImage()">&times;</button>
+            <img id="modal-img" src="" alt="Notice Preview">
+            <div id="modal-caption"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

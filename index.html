@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MRIT ISE Board</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <nav class="floating-nav">
+        <a href="index.html" class="active"><i class="fas fa-th-large"></i> Board</a>
+        <a href="admin.html"><i class="fas fa-lock"></i> Admin</a>
+        <a href="https://mysururoyal.org" target="_blank"><i class="fas fa-globe"></i> Official</a>
+    </nav>
+
+    <div class="container">
+        <div class="header">
+            <span class="dept-badge">MRIT • ISE Department</span>
+            <h1>Digital Notice Board</h1>
+            <p style="color: #71717a;">Freshly baked updates for Information Science students.</p>
+        </div>
+
+        <div id="notices-list" class="bento-grid">
+        </div>
+    </div>
+    <div id="image-modal" class="modal-overlay">
+        <div class="modal-container">
+            <button class="modal-close" onclick="closeImage()">&times;</button>
+            <img id="modal-img" src="" alt="Notice Preview">
+            <div id="modal-caption"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
